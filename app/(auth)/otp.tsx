@@ -1,7 +1,6 @@
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
 import { OtpInput } from 'react-native-otp-entry';
-import Button from '@/components/ui/Button';
 import LottieView from 'lottie-react-native';
 import Animated, { FadeInRight } from 'react-native-reanimated';
 import { useRouter } from 'expo-router';
@@ -25,11 +24,15 @@ const OTP = () => {
                >
                   Successfully Verified
                </Animated.Text>
-               <Button onPress={() => router.navigate('/choose-role')}>
+
+               <TouchableOpacity
+                  onPress={() => router.navigate('/choose-role')}
+                  className={`my-4 h-14 items-center justify-center rounded-[12px] bg-blue-800`}
+               >
                   <View>
                      <Text>Go next</Text>
                   </View>
-               </Button>
+               </TouchableOpacity>
             </View>
          ) : (
             <View>
@@ -57,11 +60,15 @@ const OTP = () => {
                      accessibilityLabel: 'One-Time Password',
                   }}
                />
-               <Button onPress={() => setIsVerified(true)}>
+
+               <TouchableOpacity
+                  onPress={() => setIsVerified(true)}
+                  className={`my-4 h-14 items-center justify-center rounded-[12px] bg-blue-800`}
+               >
                   <View>
-                     <Text>next</Text>
+                     <Text>Go next</Text>
                   </View>
-               </Button>
+               </TouchableOpacity>
             </View>
          )}
       </View>

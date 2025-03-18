@@ -1,5 +1,4 @@
-import Button from '@/components/ui/Button';
-import { Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useState } from 'react';
@@ -7,6 +6,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import FontAwesome6Brands from 'react-native-vector-icons/FontAwesome6';
 import BreakerText from '@/components/ui/breaker-text';
 import { useRouter } from 'expo-router';
+import BackButton from '@/components/ui/back-button';
 
 export default function Login() {
    const router = useRouter();
@@ -21,29 +21,35 @@ export default function Login() {
       router.navigate('/otp');
    };
    return (
-      <SafeAreaView className="flex-1 bg-neutral-800">
+      <SafeAreaView className="flex-1">
+         <BackButton />
          <Animated.View
             entering={FadeInDown.duration(1000).springify().damping(12)}
-            className="flex-1 justify-center bg-neutral-800 px-5"
+            className="flex-1 justify-center px-5"
          >
-            <Text className="items-start text-4xl font-bold text-white">
+            <Text className="items-start text-4xl font-bold">
                Login to Skippit!
             </Text>
-            <Text className="mt-1 items-start text-base font-medium text-slate-200">
+            <Text className="font-space items-start text-base font-normal">
                To continue please enter your number below
             </Text>
-            <View className="mt-8 flex h-16 flex-row items-center justify-center rounded-[12px] border border-neutral-200 px-2">
-               <Text className="px-2 text-base font-semibold text-white">
-                  +91
-               </Text>
+            <View className="mt-8 flex h-16 flex-row items-center justify-center rounded-[12px] border border-neutral-500 px-4">
+               <Image
+                  source={require('../../assets/icons/india-flag.png')}
+                 
+                  className="h-5 w-5"
+               />
+               <Text className="px-3 text-lg font-semibold">+91</Text>
+               <View className="h-5 w-[1px] bg-neutral-400" /> {/* Border with custom height */}
                <TextInput
                   keyboardType="numeric"
                   inputMode="numeric" // Ensures numeric keyboard on both Android and iOS
                   value={phoneNumber}
                   onChangeText={setPhoneNumber}
+                  maxLength={10}
                   placeholder="Enter mobile number"
-                  placeholderTextColor="white"
-                  className="flex-1 px-1 text-base font-semibold text-white"
+                  placeholderTextColor="black"
+                  className="flex-1 items-center px-3 text-lg font-semibold"
                />
                {phoneNumber.length > 0 && (
                   <Animated.View>
@@ -51,41 +57,50 @@ export default function Login() {
                         onPress={handleClear}
                         activeOpacity={0.7}
                      >
-                        <Icon name="close-circle" size={18} color="#ffffff" />
+                        <Icon name="close-circle" size={18} color="#000000" />
                      </TouchableOpacity>
                   </Animated.View>
                )}
             </View>
-            <Button onPress={handleOTP} loading={isloading} className="my-4">
-               <View>
-                  <Text className="text-lg font-semibold text-slate-200">
-                     Get Verification Code
-                  </Text>
-               </View>
-            </Button>
+            <TouchableOpacity
+               onPress={handleOTP}
+               disabled={phoneNumber.length < 10}
+               className={`my-6 h-14 items-center justify-center rounded-[12px] bg-[#007BFF] disabled:bg-[#DBDBDB]`}
+            >
+               <Text
+                  disabled={phoneNumber.length < 10}
+                  className="text-lg font-medium text-white disabled:text-[#747474]"
+               >
+                  Get Verification Code
+               </Text>
+            </TouchableOpacity>
+
             <BreakerText text="or" />
-            <Button className="relative my-4 bg-neutral-700">
-               <FontAwesome6Brands
-                  name="google"
-                  size={22}
-                  color="#ffffff"
-                  className="absolute left-12" // Fix at the start
+
+            <TouchableOpacity
+               className={`relative my-4 flex h-14 flex-row items-center justify-center rounded-[12px] border border-neutral-500`}
+            >
+               <Image
+                  source={require('../../assets/icons/google-icon.png')}
+                  className="absolute left-6 h-6 w-6"
                />
-               <Text className="text-center text-lg font-semibold text-slate-200">
+               <Text className="text-center text-lg font-medium">
                   Log in with Google
                </Text>
-            </Button>
-            <Button className="relative my-4 bg-neutral-700">
+            </TouchableOpacity>
+
+            <TouchableOpacity
+               className={`relative my-4 h-14 items-center justify-center rounded-[12px] border border-neutral-500`}
+            >
                <FontAwesome6Brands
                   name="apple"
-                  size={26}
-                  color="#ffffff"
-                  className="absolute left-12" // Fix at the start
+                  size={27}
+                  className="absolute left-6" // Fix at the start
                />
-               <Text className="text-center text-lg font-semibold text-slate-200">
+               <Text className="text-center text-lg font-medium">
                   Log in with Apple
                </Text>
-            </Button>
+            </TouchableOpacity>
          </Animated.View>
       </SafeAreaView>
    );
