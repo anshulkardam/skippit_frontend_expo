@@ -1,4 +1,11 @@
-import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import {
+   Image,
+   StyleSheet,
+   Text,
+   TextInput,
+   TouchableOpacity,
+   View,
+} from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useState } from 'react';
@@ -27,7 +34,7 @@ export default function Login() {
             entering={FadeInDown.duration(1000).springify().damping(12)}
             className="flex-1 justify-center px-5"
          >
-            <Text className="items-start text-4xl font-bold">
+            <Text className="font-roboto items-start text-4xl">
                Login to Skippit!
             </Text>
             <Text className="font-space items-start text-base font-normal">
@@ -36,11 +43,11 @@ export default function Login() {
             <View className="mt-8 flex h-16 flex-row items-center justify-center rounded-[12px] border border-neutral-500 px-4">
                <Image
                   source={require('../../assets/icons/india-flag.png')}
-                 
                   className="h-5 w-5"
                />
                <Text className="px-3 text-lg font-semibold">+91</Text>
-               <View className="h-5 w-[1px] bg-neutral-400" /> {/* Border with custom height */}
+               <View className="h-5 w-[1px] bg-neutral-400" />{' '}
+               {/* Border with custom height */}
                <TextInput
                   keyboardType="numeric"
                   inputMode="numeric" // Ensures numeric keyboard on both Android and iOS

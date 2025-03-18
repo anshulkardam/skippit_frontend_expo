@@ -32,6 +32,14 @@
           "resizeMode": "contain",
           "backgroundColor": "#262626"
         }
+      ],
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/Roboto-Bold.ttf"
+          ]
+        }
       ]
     ],
     "experiments": {
