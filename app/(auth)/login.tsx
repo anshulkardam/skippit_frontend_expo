@@ -37,7 +37,7 @@ export default function Login() {
             <Text className="font-roboto items-start text-4xl">
                Login to Skippit!
             </Text>
-            <Text className="font-space items-start text-base font-normal">
+            <Text className="items-start text-base font-normal">
                To continue please enter your number below
             </Text>
             <View className="mt-8 flex h-16 flex-row items-center justify-center rounded-[12px] border border-neutral-500 px-4">
