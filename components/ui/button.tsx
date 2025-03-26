@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const Wallet = () => {
+const button = () => {
   return (
     <View>
-      <Text>Wallet</Text>
+      <Text>button</Text>
     </View>
   )
 }
 
-export default Wallet
+export default button

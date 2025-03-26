@@ -6,7 +6,7 @@ const Index = () => {
    const router = useRouter();
    useEffect(() => {
       setTimeout(() => {
-         router.push('/(auth)/login');
+         router.push('/requester/welcome');
       }, 2000);
    }, []);
 

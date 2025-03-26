@@ -7,7 +7,7 @@ const { width } = Dimensions.get('window');
 const slides = [
   {
     id: '1',
-    title: 'Find Local Services Instantly',
+    title: 'Earn by Completing Tasks',
     description: 'Need help with everyday tasks? Post a request and get it done by nearby freelancers.',
   },
   {
@@ -32,7 +32,7 @@ const WelcomeScreen = () => {
       flatListRef.current?.scrollToIndex({ index: currentIndex + 1 });
     } else {
       // Redirect to home screen on last slide
-      navigation.replace('/runner/home'); // 👉 Replace 'Home' with your actual route name
+      navigation.replace('/runner/home');  
     }
   };
 
