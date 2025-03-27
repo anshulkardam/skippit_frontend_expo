@@ -8,9 +8,11 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import icons from '@/lib/icons';
 import { ProfileNavigationRoute, settingslist } from '@/lib/constants';
 import { Href, useRouter } from 'expo-router';
+import { Switch } from '@/components/ui/switch';
 
 const Index = () => {
    const router = useRouter();
+   const [checked, setChecked] = React.useState(false);
 
    const handleProfileNavigations = (href: ProfileNavigationRoute) => {
       router.push(href);
@@ -24,14 +26,8 @@ const Index = () => {
          <ScrollView showsVerticalScrollIndicator={false} contentContainerClassName="pb-32 px-5">
             <ProfileHeader />
             <View className="mt-4 flex flex-row justify-between">
-               <ProfileButtons
-                  title="My Tasks"
-                  Icon={(props) => <FontAwesome name="list-ul" {...props} />}
-               />
-               <ProfileButtons
-                  title="Saved Runners"
-                  Icon={(props) => <FontAwesome name="list-ul" {...props} />}
-               />
+               <ProfileButtons title="My Tasks" icon={icons.tasks} />
+               <ProfileButtons title="Saved Runners" icon={icons.wishlist} />
             </View>
             <View className="mt-4 flex flex-col rounded-lg bg-white px-4 py-2">
                {settingslist.map((setting) => (
@@ -43,7 +39,17 @@ const Index = () => {
                      onPress={() => handleProfileNavigations(setting.href)}
                   />
                ))}
-               <Settings icon={icons.mappin} title="Dark Mode" showArrow={true} />
+               {/* Dark Mode Button */}
+               <TouchableOpacity
+                  className={`flex flex-row items-center justify-between border-b border-[#EAEAEA] py-3`}
+               >
+                  <View className="flex flex-row items-center gap-3">
+                     <Image source={icons.modes} className="size-6" />
+                     <Text className="text-lg font-medium">Dark Mode</Text>
+                  </View>
+                  <Switch checked={checked} onCheckedChange={setChecked} nativeID='dark-mode' />
+               </TouchableOpacity>
+               {/* Log Out Button */}
                <Settings icon={icons.logout} title="Log Out" showArrow={true} />
             </View>
          </ScrollView>
