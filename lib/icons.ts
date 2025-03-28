@@ -21,9 +21,25 @@ import report from '../assets/icons/report.png';
 import email from '../assets/icons/email.png';
 import filters from '../assets/icons/filters.png';
 import search from '../assets/icons/search.png';
+import amazonPay from '../assets/icons/amazonPay.png';
+import CRED from '../assets/icons/CRED.png';
+import gpay from '../assets/icons/gpay.png';
+import netbanking from '../assets/icons/netbanking.png';
+import PhonePe from '../assets/icons/PhonePe.png';
+import plusIcon from '../assets/icons/plusIcon.png';
+import upi from '../assets/icons/upi.png';
+import payLater from '../assets/icons/pay-later.png';
 
 export default {
    home,
+   amazonPay,
+   CRED,
+   gpay,
+   netbanking,
+   PhonePe,
+   plusIcon,
+   upi,
+   payLater,
    wallet,
    user,
    about,
