@@ -39,14 +39,14 @@ const OTP = () => {
                   Verified!
                </Animated.Text>
 
-               <TouchableOpacity
+               {/* <TouchableOpacity
                   onPress={() => router.navigate('/choose-role')}
                   className={`my-6 h-14 w-full items-center justify-center rounded-[12px] bg-[#007BFF] disabled:bg-[#DBDBDB]`}
                >
                   <Text className="text-lg font-medium text-white disabled:text-[#747474]">
                      force next
                   </Text>
-               </TouchableOpacity>
+               </TouchableOpacity> */}
             </View>
          ) : (
             <View className="mt-6 px-5">

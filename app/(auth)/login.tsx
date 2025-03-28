@@ -46,7 +46,7 @@ export default function Login() {
                   className="h-5 w-5"
                />
                <Text className="px-3 text-lg font-semibold">+91</Text>
-               <View className="h-5 w-[1px] bg-neutral-400" />{' '}
+               <View className="h-5 w-[1px] bg-neutral-400" />
                {/* Border with custom height */}
                <TextInput
                   keyboardType="numeric"

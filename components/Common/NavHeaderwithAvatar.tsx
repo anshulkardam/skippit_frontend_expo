@@ -24,7 +24,7 @@ const NavHeaderwithAvatar = ({ name }: { name: string }) => {
             </View>
          </View>
          <TouchableOpacity onPress={() => router.push('/requester/notifications')}>
-            <Image source={icons.notifications} className="size-6" resizeMode="contain" />
+            <Image source={icons.notifications} className="size-7" resizeMode="contain" />
          </TouchableOpacity>
       </View>
    );
