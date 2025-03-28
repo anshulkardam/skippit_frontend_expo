@@ -2,7 +2,7 @@ import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Image, ScrollView, TouchableOpacity, View } from 'react-native';
 import SearchBar from '@/components/ui/SearchBar';
-import icons from '@/lib/icons'; 
+import icons from '@/lib/icons';
 import SavedRunnerCard from '@/components/Profile/SavedRunnerCard';
 import NavHeader from '@/components/Common/NavHeader';
 
@@ -17,11 +17,10 @@ const Saved = () => {
                   <Image source={icons.filters} className="size-5" />
                </TouchableOpacity>
             </View>
-            <View className='gap-4'>
-            <SavedRunnerCard online={true} />
-            <SavedRunnerCard online={false} />
+            <View className="gap-4">
+               <SavedRunnerCard online={true} />
+               <SavedRunnerCard online={false} />
             </View>
-           
          </ScrollView>
       </SafeAreaView>
    );
