@@ -9,3 +9,5 @@
 // setup config for eslint and everything else for cleaner codebase
 
 //router.replace vs router.navigate vs router.push // know when to use what
+
+// text inside touchabpe opacity somwhere// check error logs
