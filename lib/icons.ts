@@ -13,6 +13,14 @@ import user from '../assets/icons/user.png';
 import wishlist from '../assets/icons/wishlist.png';
 import help from '../assets/icons/help-support.png';
 import notifications from '../assets/icons/notifications.png';
+import accountSettings from '../assets/icons/accountSettings.png';
+import privacy from '../assets/icons/privacy.png';
+import alertSMS from '../assets/icons/alertSMS.png';
+import phone from '../assets/icons/phone.png';
+import report from '../assets/icons/report.png';
+import email from '../assets/icons/email.png';
+import filters from '../assets/icons/filters.png';
+import search from '../assets/icons/search.png';
 
 export default {
    home,
@@ -21,13 +29,21 @@ export default {
    about,
    edit,
    logout,
+   alertSMS,
+   phone,
+   email,
+   report,
    mappin,
    tasks,
    notifications,
    modes,
+   accountSettings,
+   privacy,
    BellIconSettings,
    reccuring,
    settings,
    help,
    wishlist,
+   filters,
+   search,
 };

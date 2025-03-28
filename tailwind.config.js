@@ -11,6 +11,7 @@ module.exports = {
             roboto: ['Roboto-Bold', 'sans-serif'],
          },
          colors: {
+            theme: "#007BFF",
             border: 'hsl(var(--border))',
             input: 'hsl(var(--input))',
             ring: 'hsl(var(--ring))',

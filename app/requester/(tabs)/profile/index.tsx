@@ -3,11 +3,10 @@ import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import ProfileHeader from '@/components/Profile/ProfileHeader';
 import ProfileButtons from '@/components/Profile/ProfileButtons';
-import { FontAwesome } from '@expo/vector-icons';
 import Icon from 'react-native-vector-icons/Ionicons';
 import icons from '@/lib/icons';
 import { ProfileNavigationRoute, settingslist } from '@/lib/constants';
-import { Href, useRouter } from 'expo-router';
+import { useRouter } from 'expo-router';
 import { Switch } from '@/components/ui/switch';
 
 const Index = () => {
@@ -23,11 +22,19 @@ const Index = () => {
    };
    return (
       <SafeAreaView>
-         <ScrollView showsVerticalScrollIndicator={false} contentContainerClassName="pb-32 px-5">
+         <ScrollView showsVerticalScrollIndicator={false} contentContainerClassName="pb-40 px-5">
             <ProfileHeader />
             <View className="mt-4 flex flex-row justify-between">
-               <ProfileButtons title="My Tasks" icon={icons.tasks} />
-               <ProfileButtons title="Saved Runners" icon={icons.wishlist} />
+               <ProfileButtons
+                  title="My Tasks"
+                  icon={icons.tasks}
+                  onPress={() => router.push('/requester/profile/tasks')}
+               />
+               <ProfileButtons
+                  title="Saved Runners"
+                  icon={icons.wishlist}
+                  onPress={() => router.push('/requester/profile/saved-runners')}
+               />
             </View>
             <View className="mt-4 flex flex-col rounded-lg bg-white px-4 py-2">
                {settingslist.map((setting) => (
@@ -47,7 +54,7 @@ const Index = () => {
                      <Image source={icons.modes} className="size-6" />
                      <Text className="text-lg font-medium">Dark Mode</Text>
                   </View>
-                  <Switch checked={checked} onCheckedChange={setChecked} nativeID='dark-mode' />
+                  <Switch checked={checked} onCheckedChange={setChecked} nativeID="dark-mode" />
                </TouchableOpacity>
                {/* Log Out Button */}
                <Settings icon={icons.logout} title="Log Out" showArrow={true} />
