@@ -1,8 +1,7 @@
 import { View, Text, ScrollView } from 'react-native';
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import NavHeaderwithAvatar from '@/components/Common/NavHeaderwithAvatar';
-import PopularTaskCard from '@/components/Home/PopularTaskCard';
+import NavHeaderwithAvatar from '@/components/Common/NavHeaderwithAvatar'; 
 import CreateNewTask from '@/components/Home/CreateNewTask';
 import Button from '@/components/ui/button';
 import { Entypo } from '@expo/vector-icons';
@@ -32,7 +31,7 @@ const Home = () => {
                      />
                      <Entypo name="dots-two-vertical" size={20} color={'blue'} />
                   </View>
-                  <Text className="font-semibold">All Categories</Text>{' '}
+                  <Text className="font-semibold">All Categories</Text>
                </View>
             </Button>
          </ScrollView>
