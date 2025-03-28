@@ -1,21 +1,21 @@
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
 import Button from '../ui/button';
 import icons from '@/lib/icons';
 
-const PopularTaskCard = () => {
+const PopularTaskCard = ({ title, description }: { title: string; description: string }) => {
    return (
-      <View className="h-40 w-36 rounded-3xl bg-white p-3">
-         <Text className="text-lg font-semibold">Pick Up the groceries</Text>
-         <Text className="text-xs">
-            Need someone to pick up groceries from store nearby location
-         </Text>
-         <Button>
-            <View>
-               <Text>Customize</Text>
-               <Image source={icons.edit} className="size-6" />
+      <View className="flex h-44 w-36 mr-3 flex-col justify-between gap-4 rounded-3xl bg-white p-3">
+         <View className='gap-2'>
+            <Text className="text-lg font-semibold leading-tight">{title}</Text>
+            <Text className="text-xs">{description}</Text>
+         </View>
+         <TouchableOpacity className="h-10 items-center justify-center rounded-[12px] bg-[#28A745]">
+            <View className="flex-row items-center gap-2">
+               <Text className="text-sm font-semibold text-white">Customize</Text>
+               <Image source={icons.edit} tintColor={'white'} className="size-4" />
             </View>
-         </Button>
+         </TouchableOpacity>
       </View>
    );
 };

@@ -29,10 +29,18 @@ import PhonePe from '../assets/icons/PhonePe.png';
 import plusIcon from '../assets/icons/plusIcon.png';
 import upi from '../assets/icons/upi.png';
 import payLater from '../assets/icons/pay-later.png';
+import CleaningService from '../assets/icons/CleaningService.png';
+import DayServices from '../assets/icons/DayServices.png';
+import AnimalService from '../assets/icons/AnimalService.png';
+import defaultRunner from '../assets/icons/default-runner.png';
 
 export default {
    home,
    amazonPay,
+   CleaningService,
+   DayServices,
+   defaultRunner,
+   AnimalService,
    CRED,
    gpay,
    netbanking,
